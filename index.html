@@ -46,6 +46,31 @@
         <footer>
             <h1 class="test" id="bottomText">Text 1, 2, 3, or 4 to (555)555-5555</h1>
         </footer>>
+        <script src="/socket.io/socket.io.js"></script>
+        <script>
+            var socket = io();
+
+            socket.on('text', function(msg) {
+                console.log(msg);
+                if (msg == '1') {
+                    $('img').attr('src', 'Images/frame1.jpg');
+                    $('#headText').text('lol');
+                } else if (msg == '2') {
+                    $('img').attr('src', 'Images/frame2.jpg');
+                    $('#headText').text('oof');
+                } else if (msg == '3') {
+                    $('img').attr('src', 'Images/frame3.jpg');
+                    $('#headText').text('pop');
+                } else {
+                    $('img').attr('src', 'Images/frame4.jpg');
+                    $('#headText').text('kek');
+                }
+            });
+        </script>
+        <script
+        src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+        crossorigin="anonymous"></script>
     </body>
 </html>
 
